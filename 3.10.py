@@ -1,10 +1,11 @@
-#Intereses de una cuenta bancaria
-print('Dame saldo actual:')
-Saldo = float(input( ))
+# Intereses de una cuenta bancaria
+def calcular_intereses(saldo):
+    if saldo < 10000.00:
+        saldo *= 1.03
+    else:
+        saldo *= 1.04
+    return saldo
 
-if (Saldo < 10000.00):
-    Saldo = Saldo*(1 + 0.03)
-else:
-    Saldo = Saldo*(1 + 0.04)
-
-print("Saldo final es %5.2f"%Saldo)
+saldo_actual = float(input('Dame saldo actual: '))
+saldo_final = calcular_intereses(saldo_actual)
+print(f"Saldo final es {saldo_final:.2f}")
